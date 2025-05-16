@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ListaDeDesenhos/1.0.0": {
+        "runtime": {
+          "ListaDeDesenhos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ListaDeDesenhos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

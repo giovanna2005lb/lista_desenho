@@ -1,0 +1,18 @@
+﻿@model ListaDeDesenhos.Models.Desenho
+@{
+    ViewData["Title"] = "Excluir Desenho";
+}
+
+<h2 tyle="margin-top: 30px;">Tem certeza que deseja excluir este desenho?</h2>
+
+<div>
+    <h4>@Model.Titulo</h4>
+    <p><strong>Material:</strong> @Model.Material</p>
+    <p><strong>Data:</strong> @Model.Data.ToShortDateString()</p>
+</div>
+
+<form asp-action="DeleteConfirmado">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

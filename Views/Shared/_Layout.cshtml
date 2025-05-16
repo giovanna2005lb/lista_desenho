@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ListaDeDesenhos</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ListaDeDesenhos.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #0b1e3a; /* Azul escuro */
+            color: white;
+        }
+
+        .navbar-custom {
+            background-color: #007bff; /* Azul claro */
+        }
+
+            .navbar-custom .nav-link,
+            .navbar-custom .navbar-brand {
+                color: white !important;
+            }
+
+                .navbar-custom .nav-link:hover {
+                    color: #dce3ff !important;
+                }
+
+        h1, h2, h3, h4, h5, h6,
+        p, label, span, td, th, a,
+        .form-label, .nav-link {
+            color: white !important;
+        }
+
+        .btn {
+            margin-right: 5px;
+        }
+
+        .form-control, .form-select, textarea {
+            background-color: #f0f4ff;
+            color: #000;
+        }
+
+        a {
+            color: #aad6ff;
+        }
+
+            a:hover {
+                color: #fff;
+            }
+
+        .table {
+            background-color: #123766; /* Azul mais claro que o fundo da página */
+            color: white;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            .table th, .table td {
+                border: 1px solid #061528; /* Azul bem escuro (borda) */
+                padding: 8px;
+            }
+
+            .table th {
+                background-color: #16509e; /* Azul mais vibrante para o cabeçalho */
+                color: white;
+                text-align: left;
+            }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Desenhos" asp-action="Index">Lista de Desenhos</a>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Desenhos" asp-action="Create">Novo Desenho</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" asp-controller="Desenhos" asp-action="Index" method="get">
+                        <input class="form-control me-2" type="search" name="searchString" placeholder="Buscar título..." />
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

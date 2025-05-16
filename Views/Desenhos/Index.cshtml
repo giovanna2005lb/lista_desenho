@@ -1,0 +1,36 @@
+﻿@model List<ListaDeDesenhos.Models.Desenho>
+@{
+    ViewData["Title"] = "Lista de Desenhos";
+}
+
+<h2 style ="margin-top: 20px;">Lista de Desenhos</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Data</th>
+            <th>Material</th>
+            <th>Nota</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var desenho in Model)
+        {
+            <tr>
+                <td>@desenho.Titulo</td>
+                <td>@desenho.Data.ToShortDateString()</td>
+                <td>@desenho.Material</td>
+                <td>@desenho.NotaDesempenho</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@desenho.Id" class="btn btn-info btn-sm">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@desenho.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@desenho.Id" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
